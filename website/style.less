@@ -7,6 +7,10 @@
 @darkGray: #555;
 @blue: #00BDFF;
 @orange: #FFA000;
+
+@layoutPadding: 20px;
+@madeWidthHeight: 32px;
+
 .bg-gradient (@direction, @directionb, @color1, @length1, @color2, @length2) {
   background: @color2;
   background-color: @color2;
@@ -26,14 +30,10 @@ html {
   background: @superblack;
 }
 body {
-  padding-top: 10px;
   background: @superblack;
   .bg-gradient(bottom, to top, @superblack, 10%, @black, 95%);
   background-repeat: no-repeat;
   color: @white;
-}
-.container {
-  padding-top: 10px;
 }
 a {
   color: @blue;
@@ -99,7 +99,7 @@ ul.list {
       font-size: 11px;
       color: @lightGray;
     }
-   .nick {
+    .nick {
       color: @blue;
     }
     .message {
@@ -121,8 +121,69 @@ ul.list {
   padding: 10px;
   margin-bottom: 10px;
 }
-.channel-info {
+#channel-info {
+  position: absolute;
+  top: 0;
+  left: @layoutPadding;
+  height: @layoutPadding + @madeWidthHeight;
+  line-height: @layoutPadding + @madeWidthHeight;
   font-size: 18px;
   text-align: center;
   color: @orange;
+}
+
+#content {
+  position: fixed;
+  top: @layoutPadding + @madeWidthHeight;
+  bottom: @layoutPadding;
+
+  left: 200px + @layoutPadding * 2;
+  right: 350px + @layoutPadding * 2;
+  @media (max-width: 1000px) {
+    left: 150px + @layoutPadding * 2;
+    right: 200px + @layoutPadding * 2;
+  }
+
+  .widget {
+    float: left;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 31%;
+    margin-right: 3%;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    @media (max-width: 1700px) {
+      width: 49%;
+      margin-right: 2%;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+    @media (max-width: 1200px) {
+      width: 100%;
+      margin: 0;
+      float: none;
+    }
+  }
+}
+.sidebar {
+  position: fixed;
+  top: @layoutPadding + @madeWidthHeight;
+  bottom: @layoutPadding;
+}
+#sidebar-left {
+  left: @layoutPadding;
+  width: 200px;
+  @media (max-width: 1000px) {
+    width: 150px;
+  }
+}
+#sidebar-right {
+  right: @layoutPadding;
+  width: 350px;
+  @media (max-width: 1000px) {
+    width: 200px;
+  }
 }

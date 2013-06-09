@@ -29,80 +29,44 @@
 </template>
 
 <template name="dashboard">
-  <div class="container">
-    <div class="row">
-      <div class="span2">
-        <div class="row">
-          <div class="span2">
-            <div class="channel-info">
-              {{channelName}}
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span2">
-            <div class="widget">
-              <h4>Online</h4>
-              {{{onlineCount}}}
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span2">
-            <div class="widget">
-              <h4>Messages today</h4>
-              {{{messagesToday}}}
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span2">
-            <div class="widget">
-              <h4>Top active</h4>
-              {{{topActive}}}
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span2">
-            <div class="widget">
-              <h4>Top URLs</h4>
-              {{{topURLs}}}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="span5">
-        <div class="row">
-          <div class="span5">
-            <div class="widget">
-              <h4>Online</h4>
-              {{{online}}}
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span5">
-            <div class="widget">
-              <h4>Messages per day</h4>
-              {{{messagesPerDay}}}
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span5">
-            <div class="widget">
-              <h4>Messages per hour</h4>
-              {{{messagesPerHour}}}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="span4">
-        <h4>Recent messages</h4>
-        {{{recentMessages}}}
-      </div>
+  <div id="channel-info">
+    {{channelName}}
+  </div>
+  <div id="sidebar-left" class="sidebar">
+    <div class="widget">
+      <h4>Online</h4>
+      {{{onlineCount}}}
     </div>
+    <div class="widget">
+      <h4>Messages today</h4>
+      {{{messagesToday}}}
+    </div>
+    <div class="widget">
+      <h4>Top active</h4>
+      {{{topActive}}}
+    </div>
+    <div class="widget">
+      <h4>Top URLs</h4>
+      {{{topURLs}}}
+    </div>
+  </div>
+  <div id="content">
+    <div class="widget">
+      <h4>Online</h4>
+      {{{online}}}
+    </div>
+    <div class="widget">
+      <h4>Messages per day</h4>
+      {{{messagesPerDay}}}
+    </div>
+    <div class="widget">
+      <h4>Messages per hour</h4>
+      {{{messagesPerHour}}}
+    </div>
+  </div>
+  <div id="sidebar-right" class="sidebar">
+    <h4>Recent messages</h4>
+    {{{recentMessages}}}
   </div>
 </template>
 
