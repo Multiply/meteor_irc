@@ -143,6 +143,9 @@ ul.list {
     left: 150px + @layoutPadding * 2;
     right: 200px + @layoutPadding * 2;
   }
+  @media (max-width: 680px) {
+    position: static;
+  }
 
   .widget {
     float: left;
@@ -172,12 +175,19 @@ ul.list {
   position: fixed;
   top: @layoutPadding + @madeWidthHeight;
   bottom: @layoutPadding;
+  @media (max-width: 680px) {
+    position: static;
+    width: 100% !important;
+  }
 }
 #sidebar-left {
   left: @layoutPadding;
   width: 200px;
   @media (max-width: 1000px) {
     width: 150px;
+  }
+  @media (max-width: 680px) {
+    margin-top: @layoutPadding + @madeWidthHeight;
   }
 }
 #sidebar-right {
@@ -187,3 +197,4 @@ ul.list {
     width: 200px;
   }
 }
+
